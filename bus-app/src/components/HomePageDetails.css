@@ -1,0 +1,88 @@
+/* HomePageDetails.css */
+.search-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 720px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1b1f3b;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f2f3f5;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+}
+
+.input-wrapper .icon {
+  margin-right: 8px;
+  color: #555;
+}
+
+input,
+select {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+}
+
+.search-button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #ff3e3e;
+}
+
+.location-pair {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.swap-button {
+  border: none;
+  background: #eee;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.swap-button:hover {
+  background-color: #ddd;
+}

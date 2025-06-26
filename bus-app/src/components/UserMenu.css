@@ -1,0 +1,12 @@
+.user-dropdown {
+  min-width: 200px;
+  z-index: 999;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-menu button {
+  white-space: nowrap;
+}

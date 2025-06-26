@@ -1,0 +1,338 @@
+[
+  {
+    "state": "Andhra Pradesh",
+    "places": [
+      "Visakhapatnam",
+      "Vijayawada",
+      "Guntur",
+      "Nellore",
+      "Tirupati",
+      "Rajahmundry",
+      "Chittoor",
+      "Srikalahasti",
+      "Machilipatnam",
+      "Tenali"
+    ]
+  },
+  {
+    "state": "Arunachal Pradesh",
+    "places": [
+      "Itanagar",
+      "Tawang",
+      "Ziro",
+      "Bomdila",
+      "Pasighat",
+      "Roing",
+      "Tezu"
+    ]
+  },
+  {
+    "state": "Assam",
+    "places": [
+      "Guwahati",
+      "Silchar",
+      "Dibrugarh",
+      "Jorhat",
+      "Nagaon",
+      "Tezpur",
+      "Tinsukia"
+    ]
+  },
+  {
+    "state": "Bihar",
+    "places": [
+      "Patna",
+      "Gaya",
+      "Muzaffarpur",
+      "Bhagalpur",
+      "Darbhanga",
+      "Bettiah",
+      "Madhubani",
+      "Sitamarhi",
+      "Samastipur"
+    ]
+  },
+  {
+    "state": "Chhattisgarh",
+    "places": [
+      "Raipur",
+      "Bilaspur",
+      "Durg",
+      "Jagdalpur",
+      "Korba",
+      "Ambikapur",
+      "Rajnandgaon"
+    ]
+  },
+  {
+    "state": "Goa",
+    "places": [
+      "Panaji",
+      "Margao",
+      "Mapusa",
+      "Vasco da Gama",
+      "Ponda",
+      "Canacona"
+    ]
+  },
+  {
+    "state": "Gujarat",
+    "places": [
+      "Ahmedabad",
+      "Surat",
+      "Vadodara",
+      "Rajkot",
+      "Bhavnagar",
+      "Junagadh",
+      "Gandhinagar",
+      "Morbi",
+      "Porbandar"
+    ]
+  },
+  {
+    "state": "Haryana",
+    "places": [
+      "Chandigarh",
+      "Gurgaon",
+      "Faridabad",
+      "Panipat",
+      "Rohtak",
+      "Hisar",
+      "Karnal",
+      "Yamunanagar"
+    ]
+  },
+  {
+    "state": "Himachal Pradesh",
+    "places": [
+      "Shimla",
+      "Manali",
+      "Dharamshala",
+      "Solan",
+      "Mandi",
+      "Bilaspur",
+      "Chamba"
+    ]
+  },
+  {
+    "state": "Jharkhand",
+    "places": [
+      "Ranchi",
+      "Jamshedpur",
+      "Dhanbad",
+      "Bokaro",
+      "Deoghar",
+      "Hazaribagh",
+      "Giridih"
+    ]
+  },
+  {
+    "state": "Karnataka",
+    "places": [
+      "Bengaluru",
+      "Mysore",
+      "Hubli",
+      "Mangalore",
+      "Belgaum",
+      "Bellary",
+      "Shimoga",
+      "Davanagere"
+    ]
+  },
+  {
+    "state": "Kerala",
+    "places": [
+      "Thiruvananthapuram",
+      "Kochi",
+      "Kozhikode",
+      "Kollam",
+      "Thrissur",
+      "Alappuzha",
+      "Kottayam"
+    ]
+  },
+  {
+    "state": "Madhya Pradesh",
+    "places": [
+      "Bhopal",
+      "Indore",
+      "Jabalpur",
+      "Ujjain",
+      "Gwalior",
+      "Rewa",
+      "Satna",
+      "Sehore",
+      "Khargone",
+      "Barwani",
+      "Tikamgarh"
+    ]
+  },
+  {
+    "state": "Maharashtra",
+    "places": [
+      "Mumbai",
+      "Pune",
+      "Nagpur",
+      "Nashik",
+      "Aurangabad",
+      "Solapur",
+      "Amravati",
+      "Wardha",
+      "Satara",
+      "Shirdi"
+    ]
+  },
+  {
+    "state": "Manipur",
+    "places": [
+      "Imphal",
+      "Thoubal",
+      "Bishnupur",
+      "Ukhrul",
+      "Senapati"
+    ]
+  },
+  {
+    "state": "Meghalaya",
+    "places": [
+      "Shillong",
+      "Tura",
+      "Jowai",
+      "Nongpoh",
+      "Baghmara"
+    ]
+  },
+  {
+    "state": "Mizoram",
+    "places": [
+      "Aizawl",
+      "Lunglei",
+      "Champhai",
+      "Kolasib",
+      "Serchhip"
+    ]
+  },
+  {
+    "state": "Nagaland",
+    "places": [
+      "Kohima",
+      "Dimapur",
+      "Mokokchung",
+      "Wokha",
+      "Tuensang"
+    ]
+  },
+  {
+    "state": "Odisha",
+    "places": [
+      "Bhubaneswar",
+      "Cuttack",
+      "Puri",
+      "Rourkela",
+      "Sambalpur",
+      "Berhampur"
+    ]
+  },
+  {
+    "state": "Punjab",
+    "places": [
+      "Amritsar",
+      "Ludhiana",
+      "Jalandhar",
+      "Patiala",
+      "Bathinda",
+      "Mohali",
+      "Hoshiarpur"
+    ]
+  },
+  {
+    "state": "Rajasthan",
+    "places": [
+      "Jaipur",
+      "Jodhpur",
+      "Udaipur",
+      "Ajmer",
+      "Bikaner",
+      "Alwar",
+      "Bharatpur",
+      "Sikar"
+    ]
+  },
+  {
+    "state": "Sikkim",
+    "places": [
+      "Gangtok",
+      "Namchi",
+      "Geyzing",
+      "Mangan"
+    ]
+  },
+  {
+    "state": "Tamil Nadu",
+    "places": [
+      "Chennai",
+      "Coimbatore",
+      "Madurai",
+      "Tiruchirappalli",
+      "Salem",
+      "Vellore",
+      "Tirunelveli"
+    ]
+  },
+  {
+    "state": "Telangana",
+    "places": [
+      "Hyderabad",
+      "Warangal",
+      "Nizamabad",
+      "Karimnagar",
+      "Khammam"
+    ]
+  },
+  {
+    "state": "Tripura",
+    "places": [
+      "Agartala",
+      "Udaipur",
+      "Kailasahar",
+      "Dharmanagar"
+    ]
+  },
+  {
+    "state": "Uttar Pradesh",
+    "places": [
+      "Lucknow",
+      "Kanpur",
+      "Varanasi",
+      "Prayagraj",
+      "Agra",
+      "Ayodhya",
+      "Mirzapur",
+      "Chitrakoot",
+      "Faizabad",
+      "Gorakhpur"
+    ]
+  },
+  {
+    "state": "Uttarakhand",
+    "places": [
+      "Dehradun",
+      "Haridwar",
+      "Nainital",
+      "Almora",
+      "Rishikesh"
+    ]
+  },
+  {
+    "state": "West Bengal",
+    "places": [
+      "Kolkata",
+      "Howrah",
+      "Durgapur",
+      "Asansol",
+      "Siliguri",
+      "Darjeeling",
+      "Kharagpur"
+    ]
+  }
+]

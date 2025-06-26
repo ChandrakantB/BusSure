@@ -1,0 +1,33 @@
+/* src/admin/pages/PendingApprovals.css */
+
+.pending-approvals {
+  padding: 10px;
+}
+
+.approval-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.approval-card {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex: 1 1 300px;
+}
+
+.approval-card h5 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.approval-card p {
+  margin: 4px 0;
+}
+
+.approval-actions {
+  margin-top: 10px;
+}

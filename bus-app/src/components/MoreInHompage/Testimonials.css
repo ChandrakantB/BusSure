@@ -1,0 +1,13 @@
+/* Testimonials.css */
+.testimonials-section {
+  background: #f9f9f9;
+}
+
+.testimonial-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}

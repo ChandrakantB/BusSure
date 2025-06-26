@@ -1,0 +1,55 @@
+/* src/admin/DashboardLayout.css */
+
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 230px;
+  background-color: #212529;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar li {
+  margin-bottom: 15px;
+}
+
+.admin-sidebar a {
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+.admin-sidebar a:hover {
+  text-decoration: underline;
+}
+
+.admin-main {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.admin-header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.admin-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}

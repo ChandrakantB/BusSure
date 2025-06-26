@@ -1,0 +1,52 @@
+.counters-section {
+  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.counters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.counter-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  padding: 1.6rem 1rem;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.counter-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.14);
+}
+
+.counter-number {
+  font-weight: 900;
+  font-size: 2.6rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.counter-number::after {
+  content: attr(data-suffix);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #22c55e;
+  position: absolute;
+  right: -20px;
+  top: 6px;
+}
+
+.counter-label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #334155;
+}

@@ -1,0 +1,19 @@
+.bus-owner-dashboard input {
+  border-radius: 8px;
+}
+
+.bus-owner-dashboard .card {
+  border-radius: 10px;
+}
+
+.status-pending {
+  color: orange;
+}
+
+.status-approved {
+  color: green;
+}
+
+.status-rejected {
+  color: red;
+}
