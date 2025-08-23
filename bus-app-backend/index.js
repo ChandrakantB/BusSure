@@ -4,14 +4,14 @@ const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
-const adminRoutes = require('./routes/adminRoutes');
-const adminBusRoutes = require('./routes/adminBuses');
+// const adminRoutes = require('./routes/adminRoutes');
+// const adminBusRoutes = require('./routes/adminBuses');
 
 require('dotenv').config();
 
 const locationRoutes = require('./routes/LocationRoutes');
 
-const busRoutes = require('./routes/busRoutes'); // ✅ New route
+// const busRoutes = require('./routes/busRoutes'); // ✅ New route
 
 // ...
 
@@ -38,19 +38,19 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 
 // ✅ Admin APIs (Login + Approvals)
-app.use('/api/admin', adminRoutes); // this will include /login, /approvals
+// app.use('/api/admin', adminRoutes); // this will include /login, /approvals
 
 //for the locations loading
 
-app.use('/api/locations', locationRoutes);
+// app.use('/api/locations', locationRoutes);
 
 
 //for the bus loading 
-app.use('/api/buses', busRoutes);
+// app.use('/api/buses', busRoutes);
 
 
 //for admin section all buses
-app.use('/api/admin/buses',adminBusRoutes);
+// app.use('/api/admin/buses',adminBusRoutes);
 
 
 // ✅ Dummy user creation API (for testing)

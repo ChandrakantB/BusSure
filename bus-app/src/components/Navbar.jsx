@@ -4,15 +4,12 @@ import UserMenu from "./UserMenu";
 import { useAuth } from "../context/AuthContext";
 
 function Navbar({ onLoginClick, onSignupClick }) {
-  const [darkMode, setDarkMode] = useState(false);
   const { user } = useAuth(); // 🔑 Access user from AuthContext
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  
 
   return (
-    <nav className={`navbar navbar-expand-lg ${darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"}`}>
+    <nav className={"navbar navbar-expand-lg navbar-dark bg-light"}>
       <div className="container-fluid">
         <a className="navbar-brand fw-bold fs-4 text-primary" href="/">
           🚌 BusSure
@@ -51,13 +48,13 @@ function Navbar({ onLoginClick, onSignupClick }) {
 
           <form className="d-flex me-3" role="search" onSubmit={(e) => e.preventDefault()}>
             <input
-              className={`form-control me-2 ${darkMode ? "bg-secondary text-white" : ""}`}
+              className={`form-control me-2 `}
               type="search"
               placeholder="Search buses, routes..."
               aria-label="Search"
             />
             <button
-              className={`btn ${darkMode ? "btn-outline-light" : "btn-outline-primary"}`}
+              className={"btn-outline-light"}
               type="submit"
             >
               Search
@@ -71,7 +68,7 @@ function Navbar({ onLoginClick, onSignupClick }) {
               <>
                 <button
                   type="button"
-                  className={`btn btn-sm ${darkMode ? "btn-outline-light" : "btn-outline-secondary"}`}
+                  className={"btn btn-sm btn-outline-secondary"}
                   onClick={onLoginClick}
                 >
                   Login
@@ -79,22 +76,13 @@ function Navbar({ onLoginClick, onSignupClick }) {
 
                 <button
                   type="button"
-                  className={`btn btn-sm ${darkMode ? "btn-outline-light" : "btn-outline-secondary"}`}
+                  className={"btn btn-sm btn-outline-secondary"}
                   onClick={onSignupClick}
                 >
                   Signup
                 </button>
               </>
             )}
-
-            <button
-              type="button"
-              onClick={toggleDarkMode}
-              className={`btn btn-sm ${darkMode ? "btn-light" : "btn-dark"}`}
-              title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-            >
-              {darkMode ? "🌞" : "🌙"}
-            </button>
           </div>
         </div>
       </div>
