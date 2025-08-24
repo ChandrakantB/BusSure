@@ -44,6 +44,8 @@ function App() {
             {/* Add more like buses, reports here */}
             <Route path="buses" element={<AllBuses />} />
             <Route path="reports" element={<Reports />} /> 
+
+            
           </Route>
         </Routes>
       </Router>

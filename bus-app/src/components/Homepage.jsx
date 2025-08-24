@@ -13,6 +13,7 @@ import ImageSlider from "./ImageSlider";
 import Footer from "./Footer";
 import Login from "./Login";
 import Signup from "./Signup";
+import New from "./New"
 import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
@@ -32,6 +33,7 @@ const Homepage = () => {
         onSignupClick={() => setShowSignup(true)}
       />
       <HeroSection />
+      <New/>
       <div style={{ position: "relative" }}>
         <ImageSlider />
         <HomePageDetails onSearch={handleSearch} />
