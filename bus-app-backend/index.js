@@ -46,10 +46,10 @@ app.use('/api/auth', authRoutes);
 
 ///////villages data 
 
-app.get('/api/states' , (req , res) => {
-  res.json(Object.keys(data));
+app.get('/api/states', (req, res) => {
+  const states = data.map(s => s.state);
+  res.json(states);
 });
-
 
 app.get("/api/districts/:state", (req, res) => {
   const state = req.params.state.toLowerCase().replace(/\s+/g, "");
@@ -123,7 +123,40 @@ app.get("/api/villages/:state/:district/:subdistrict", (req, res) => {
 });
 
 
+app.get("/api/search", (req, res) => {
+  const { q } = req.query;
+  if (!q || q.trim() === "") {
+    return res.json([]);
+  }
 
+  const query = q.toLowerCase();
+  let results = [];
+
+  data.forEach((stateObj) => {
+    const stateName = stateObj?.state;
+
+    stateObj?.districts?.forEach((districtObj) => {
+      const districtName = districtObj?.district;
+
+      districtObj?.subDistricts?.forEach((subObj) => {
+        subObj?.villages?.forEach((villageName) => {
+          // if (villageName && villageName.toLowerCase().includes(query)) {
+          if (villageName && villageName.toLowerCase() == query.toLowerCase()) {
+            results.push({
+              type: "village",
+              name: villageName,
+              subDistrict: subObj?.subDistrict || "Unknown",
+              district: districtName || "Unknown",
+              state: stateName || "Unknown",
+            });
+          }
+        });
+      });
+    });
+  });
+
+  res.json(results);
+});
 
 
 

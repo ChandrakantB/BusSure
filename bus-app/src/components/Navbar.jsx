@@ -46,20 +46,6 @@ function Navbar({ onLoginClick, onSignupClick }) {
             </li>
           </ul>
 
-          <form className="d-flex me-3" role="search" onSubmit={(e) => e.preventDefault()}>
-            <input
-              className={`form-control me-2 `}
-              type="search"
-              placeholder="Search buses, routes..."
-              aria-label="Search"
-            />
-            <button
-              className={"btn-outline-light"}
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
 
           <div className="d-flex align-items-center gap-2">
             {user ? (
