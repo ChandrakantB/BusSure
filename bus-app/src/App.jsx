@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import Homepage from './components/Homepage';
 import SearchResults from './components/SearchResults';
 import Support from './components/Support';
