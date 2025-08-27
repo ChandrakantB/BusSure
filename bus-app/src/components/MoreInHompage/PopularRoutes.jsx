@@ -1,7 +1,6 @@
 // src/components/PopularRoutes.jsx
-import React from 'react';
-import './PopularRoutes.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const popularRoutes = [
   { from: "Delhi", to: "Jaipur" },
@@ -16,19 +15,26 @@ const popularRoutes = [
 
 const PopularRoutes = () => {
   return (
-    <section className="popular-routes-section py-5">
-      <div className="container">
-        <h2 className="text-center fw-bold text-primary mb-4">🚍 Popular Routes</h2>
-        <div className="row">
+    <section className="bg-gray-100 py-12">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-center font-bold text-blue-600 mb-10 text-2xl md:text-3xl">
+          🚍 Popular Routes
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {popularRoutes.map((route, index) => (
-            <div key={index} className="col-sm-6 col-md-4 col-lg-3 mb-3">
-              <Link to={`/search?from=${route.from}&to=${route.to}`} className="route-card shadow-sm">
-                <div className="p-3">
-                  <h5 className="mb-1">{route.from} ➡️ {route.to}</h5>
-                  <p className="text-muted small mb-0">Quick Book</p>
-                </div>
-              </Link>
-            </div>
+            <Link
+              key={index}
+              to={`/search?from=${encodeURIComponent(route.from)}&to=${encodeURIComponent(route.to)}`}
+              className="group block bg-white rounded-lg border border-gray-300 shadow-sm hover:bg-blue-50 hover:shadow-lg transition duration-200 text-gray-900 h-full no-underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-200"
+            >
+              <div className="p-4 min-h-[84px] flex flex-col justify-center">
+                <h5 className="mb-1 font-semibold text-lg group-hover:text-blue-700">
+                  {route.from} ➡️ {route.to}
+                </h5>
+                <p className="text-gray-500 text-sm mb-0">Quick Book</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

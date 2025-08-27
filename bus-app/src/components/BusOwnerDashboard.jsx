@@ -1,42 +1,41 @@
-import React, { useState } from 'react';
-import './BusOwnerDashboard.css'; // 👉 Create this file for styling
+// src/pages/BusOwnerDashboard.jsx
+import React, { useState } from "react";
 
-// Dummy data: Replace with API calls later
 const initialBuses = [
   {
-    id: 'BUS101',
-    busName: 'Shiv Travels',
-    from: 'Varanasi',
-    to: 'Lucknow',
-    date: '2025-06-20',
-    time: '07:30 AM',
+    id: "BUS101",
+    busName: "Shiv Travels",
+    from: "Varanasi",
+    to: "Lucknow",
+    date: "2025-06-20",
+    time: "07:30 AM",
     fare: 450,
     seats: 40,
-    status: 'Pending',
+    status: "Pending",
   },
   {
-    id: 'BUS102',
-    busName: 'Rajdhani Deluxe',
-    from: 'Delhi',
-    to: 'Agra',
-    date: '2025-06-25',
-    time: '03:45 PM',
+    id: "BUS102",
+    busName: "Rajdhani Deluxe",
+    from: "Delhi",
+    to: "Agra",
+    date: "2025-06-25",
+    time: "03:45 PM",
     fare: 300,
     seats: 30,
-    status: 'Approved',
+    status: "Approved",
   },
 ];
 
 const BusOwnerDashboard = () => {
   const [buses, setBuses] = useState(initialBuses);
   const [formData, setFormData] = useState({
-    busName: '',
-    from: '',
-    to: '',
-    date: '',
-    time: '',
-    fare: '',
-    seats: '',
+    busName: "",
+    from: "",
+    to: "",
+    date: "",
+    time: "",
+    fare: "",
+    seats: "",
   });
 
   const handleChange = (e) => {
@@ -51,122 +50,141 @@ const BusOwnerDashboard = () => {
     const newBus = {
       ...formData,
       id: `BUS${Math.floor(Math.random() * 10000)}`,
-      status: 'Pending',
+      status: "Pending",
     };
     setBuses([newBus, ...buses]);
     setFormData({
-      busName: '',
-      from: '',
-      to: '',
-      date: '',
-      time: '',
-      fare: '',
-      seats: '',
+      busName: "",
+      from: "",
+      to: "",
+      date: "",
+      time: "",
+      fare: "",
+      seats: "",
     });
     alert("Bus submitted for review!");
   };
 
-  return (
-    <div className="container py-5 bus-owner-dashboard">
-      <h2 className="text-center text-primary fw-bold mb-4">🚌 Bus Owner Dashboard</h2>
+  const statusColors = {
+    Pending: "text-orange-500",
+    Approved: "text-green-600",
+    Rejected: "text-red-600",
+  };
 
-      <form className="row g-3 mb-5" onSubmit={handleSubmit}>
-        <div className="col-md-6">
-          <input
-            type="text"
-            name="busName"
-            className="form-control"
-            placeholder="Bus Name"
-            required
-            value={formData.busName}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="text"
-            name="from"
-            className="form-control"
-            placeholder="From"
-            required
-            value={formData.from}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="text"
-            name="to"
-            className="form-control"
-            placeholder="To"
-            required
-            value={formData.to}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="date"
-            name="date"
-            className="form-control"
-            required
-            value={formData.date}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="time"
-            name="time"
-            className="form-control"
-            required
-            value={formData.time}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="number"
-            name="fare"
-            className="form-control"
-            placeholder="Fare (₹)"
-            required
-            value={formData.fare}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-3">
-          <input
-            type="number"
-            name="seats"
-            className="form-control"
-            placeholder="Seats"
-            required
-            value={formData.seats}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-12 text-end">
-          <button type="submit" className="btn btn-success">Submit Bus</button>
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-10">
+      <h2 className="text-center text-2xl md:text-3xl font-bold text-blue-600 mb-8">
+        🚌 Bus Owner Dashboard
+      </h2>
+
+      {/* Form */}
+      <form
+        onSubmit={handleSubmit}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white p-6 rounded-xl shadow-md mb-10"
+      >
+        <input
+          type="text"
+          name="busName"
+          placeholder="Bus Name"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.busName}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="from"
+          placeholder="From"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.from}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="to"
+          placeholder="To"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.to}
+          onChange={handleChange}
+        />
+        <input
+          type="date"
+          name="date"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.date}
+          onChange={handleChange}
+        />
+        <input
+          type="time"
+          name="time"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.time}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="fare"
+          placeholder="Fare (₹)"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.fare}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="seats"
+          placeholder="Seats"
+          className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+          required
+          value={formData.seats}
+          onChange={handleChange}
+        />
+        <div className="col-span-full flex justify-end">
+          <button
+            type="submit"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition"
+          >
+            Submit Bus
+          </button>
         </div>
       </form>
 
-      <div className="row">
+      {/* Buses List */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {buses.map((bus) => (
-          <div className="col-md-6 col-lg-4 mb-4" key={bus.id}>
-            <div className="card h-100 shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">{bus.busName}</h5>
-                <p className="card-text"><strong>Route:</strong> {bus.from} ➡️ {bus.to}</p>
-                <p className="card-text"><strong>Date:</strong> {bus.date}</p>
-                <p className="card-text"><strong>Time:</strong> {bus.time}</p>
-                <p className="card-text"><strong>Fare:</strong> ₹{bus.fare}</p>
-                <p className="card-text"><strong>Seats:</strong> {bus.seats}</p>
-                <p className={`card-text fw-bold status-${bus.status.toLowerCase()}`}>
-                  Status: {bus.status}
-                </p>
-              </div>
-            </div>
+          <div
+            key={bus.id}
+            className="bg-white rounded-xl shadow-md p-5 border border-gray-200"
+          >
+            <h5 className="text-lg font-semibold text-gray-800 mb-2">
+              {bus.busName}
+            </h5>
+            <p className="text-gray-600">
+              <strong>Route:</strong> {bus.from} ➡️ {bus.to}
+            </p>
+            <p className="text-gray-600">
+              <strong>Date:</strong> {bus.date}
+            </p>
+            <p className="text-gray-600">
+              <strong>Time:</strong> {bus.time}
+            </p>
+            <p className="text-gray-600">
+              <strong>Fare:</strong> ₹{bus.fare}
+            </p>
+            <p className="text-gray-600">
+              <strong>Seats:</strong> {bus.seats}
+            </p>
+            <p
+              className={`font-bold mt-2 ${
+                statusColors[bus.status] || "text-gray-500"
+              }`}
+            >
+              Status: {bus.status}
+            </p>
           </div>
         ))}
       </div>

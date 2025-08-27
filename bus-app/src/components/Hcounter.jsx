@@ -1,26 +1,23 @@
+// src/components/Hcounter.jsx
 import React, { useEffect, useState } from "react";
-import "./Hcounter.css";
 
 const countersData = [
-  { label: "Bus routes across India", target: 5870, suffix: "+" },
-  { label: "Bus partners", target: 3500, suffix: "+" },
-  { label: "Trusted travellers", target: 400, suffix: "+" },
-  { label: "Daily Offers", target: 50, suffix: "+" },
-  { label: "Years of service", target: 19, suffix: "+" },
+  { label: "Bus routes across India", target: 12500, suffix: "+" },
+  { label: "Verified bus operators", target: 4800, suffix: "+" },
+  { label: "Happy travellers", target: 920000, suffix: "+" },
+  { label: "Daily trips", target: 15000, suffix: "+" },
+  { label: "Years of trusted service", target: 12, suffix: "+" },
 ];
 
 function Hcounter() {
-  const [counts, setCounts] = useState(
-    countersData.map(() => 0)
-  );
+  const [counts, setCounts] = useState(countersData.map(() => 0));
 
   useEffect(() => {
-    const durations = countersData.map(() => 2000); // 2 seconds animation
-
+    const durations = countersData.map(() => 2000); // 2s animation
     const startTimes = countersData.map(() => null);
     const animationFrameIds = [];
 
-    function animateCount(index, startTime) {
+    function animateCount(index) {
       function step(timestamp) {
         if (!startTimes[index]) startTimes[index] = timestamp;
         const progress = timestamp - startTimes[index];
@@ -39,7 +36,6 @@ function Hcounter() {
         if (progress < duration) {
           animationFrameIds[index] = requestAnimationFrame(step);
         } else {
-          // Ensure final value
           setCounts((prev) => {
             const newCounts = [...prev];
             newCounts[index] = target;
@@ -51,7 +47,7 @@ function Hcounter() {
     }
 
     countersData.forEach((_, idx) => {
-      animateCount(idx, null);
+      animateCount(idx);
     });
 
     return () => {
@@ -60,15 +56,18 @@ function Hcounter() {
   }, []);
 
   return (
-    <section className="counters-section">
-      <div className="counters-container">
+    <section className="bg-gradient-to-br from-cyan-50 to-white py-12 px-4 text-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
         {countersData.map(({ label, suffix }, idx) => (
-          <div key={label} className="counter-card">
-            <div className="counter-number">
+          <div
+            key={label}
+            className="bg-white/80 backdrop-blur-md rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105 p-6 cursor-default"
+          >
+            <div className="text-4xl font-extrabold text-gray-900 mb-2 relative">
               {counts[idx].toLocaleString()}
-              {suffix}
+              <span className="text-green-500 text-xl font-bold ml-1">{suffix}</span>
             </div>
-            <div className="counter-label">{label}</div>
+            <div className="text-base font-semibold text-slate-600">{label}</div>
           </div>
         ))}
       </div>

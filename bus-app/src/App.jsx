@@ -6,7 +6,7 @@ import Support from './components/Support';
 import MyBookings from './components/MyBookings';
 import Partner from './components/Partner';
 import BusOwnerDashboard from './components/BusOwnerDashboard';
-import SeatSelection from './components/SeatSelection';
+// import SeatSelection from './components/SeatSelection';
 import BookingSummary from './components/BookingSummary';
 
 import AdminLogin from './admin/AdminLogin';
@@ -34,7 +34,7 @@ function App() {
           <Route path="/my-bookings" element={<MyBookings />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/partner/dashboard" element={<BusOwnerDashboard />} />
-          <Route path="/select-seats/:busId" element={<SeatSelection />} />
+          {/* <Route path="/select-seats/:busId" element={<SeatSelection />} /> */}
           <Route path="/select-seats/summary" element={<BookingSummary />} />
           <Route path="/api/admin/login" element={<AdminLogin />} />
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Modal.css';
 import { toast } from 'react-toastify';
 
 const Login = ({ onClose }) => {
@@ -36,11 +35,21 @@ const Login = ({ onClose }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <button className="modal-close" onClick={onClose}>✖</button>
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
+    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-white rounded-2xl shadow-lg w-11/12 max-w-md p-6 relative">
+        {/* Close button */}
+        <button
+          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl"
+          onClick={onClose}
+        >
+          ✖
+        </button>
+
+        {/* Title */}
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Login</h2>
+
+        {/* Form */}
+        <form onSubmit={handleLogin} className="space-y-4">
           <input
             type="email"
             name="email"
@@ -48,7 +57,7 @@ const Login = ({ onClose }) => {
             required
             value={credentials.email}
             onChange={handleChange}
-            className="form-control my-2"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
           <input
             type="password"
@@ -57,9 +66,15 @@ const Login = ({ onClose }) => {
             required
             value={credentials.password}
             onChange={handleChange}
-            className="form-control my-2"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
-          <button type="submit" className="btn btn-success w-100">Login</button>
+
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-all duration-200"
+          >
+            Login
+          </button>
         </form>
       </div>
     </div>

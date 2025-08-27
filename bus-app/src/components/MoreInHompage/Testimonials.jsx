@@ -1,12 +1,12 @@
 // src/components/Testimonials.jsx
-import React from 'react';
-import './Testimonials.css';
+import React from "react";
 
 const testimonials = [
   {
     name: "Ravi Kumar",
     location: "Muzaffarpur, Bihar",
-    message: "Finally an app that connects my village! Booking is smooth and transparent.",
+    message:
+      "Finally an app that connects my village! Booking is smooth and transparent.",
     rating: 5,
   },
   {
@@ -25,19 +25,22 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="testimonials-section py-5 bg-light">
-      <div className="container">
-        <h2 className="text-center text-primary fw-bold mb-4">💬 What Our Users Say</h2>
-        <div className="row justify-content-center">
+    <section className="bg-gray-50 py-12">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-center font-bold text-primary mb-10 text-2xl md:text-3xl">
+          💬 What Our Users Say
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {testimonials.map((t, index) => (
-            <div className="col-md-6 col-lg-4 mb-4" key={index}>
-              <div className="testimonial-card p-4 h-100 shadow-sm rounded bg-white">
-                <p className="mb-3">“{t.message}”</p>
-                <div className="fw-bold">{t.name}</div>
-                <small className="text-muted">{t.location}</small>
-                <div className="text-warning mt-2">
-                  {"⭐".repeat(t.rating)}
-                </div>
+            <div
+              key={index}
+              className="p-6 h-full shadow-sm rounded-lg bg-white hover:-translate-y-1 hover:shadow-xl transition duration-200 w-full"
+            >
+              <p className="mb-3">“{t.message}”</p>
+              <div className="font-semibold">{t.name}</div>
+              <small className="text-gray-500">{t.location}</small>
+              <div className="text-yellow-500 mt-2">
+                {"⭐".repeat(t.rating)}
               </div>
             </div>
           ))}

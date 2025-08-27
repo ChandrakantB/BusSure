@@ -1,26 +1,31 @@
+// src/components/Support.jsx
 import React, { useState } from 'react';
-import './Support.css'; // You'll create styles accordingly
+
+const SUPPORT_FAQS = [
+  {
+    question: "How do I cancel a booking?",
+    answer: `Go to "My Bookings" and click "Cancel".`,
+  },
+  {
+    question: "Can I change travel date?",
+    answer: `Not yet, but cancellation and re-booking is supported.`,
+  },
+  {
+    question: "What if I didn’t receive a ticket?",
+    answer: `Check your email spam or contact support below.`,
+  },
+];
 
 const Support = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    issue: '',
-  });
-
+  const [formData, setFormData] = useState({ name: '', email: '', issue: '' });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
-    });
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Basic validation (expandable)
     if (!formData.name || !formData.email || !formData.issue) {
       alert('Please fill in all fields.');
       return;
@@ -32,60 +37,83 @@ const Support = () => {
   };
 
   return (
-    <div className="support-container py-4 px-3 px-md-5">
-      <h2 className="text-center mb-4">🛠️ Need Help? We're here for you</h2>
+    <div className="bg-gray-50 rounded-lg py-8 px-4 sm:px-8 lg:px-16">
+      <h2 className="text-2xl font-bold text-center mb-8">
+        🛠️ Need Help? We’re here for you
+      </h2>
 
-      <div className="support-content row">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Contact Form */}
-        <div className="col-md-6">
-          <h4>📩 Contact Us</h4>
-          <form onSubmit={handleSubmit} className="support-form">
+        <div>
+          <h4 className="text-xl font-semibold mb-4">📩 Contact Us</h4>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
               name="name"
               placeholder="Your Name"
+              required
               value={formData.name}
               onChange={handleChange}
-              className="form-control my-2"
-              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
+              required
               value={formData.email}
               onChange={handleChange}
-              className="form-control my-2"
-              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <textarea
               name="issue"
               rows="4"
               placeholder="Describe your issue..."
+              required
               value={formData.issue}
               onChange={handleChange}
-              className="form-control my-2"
-              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            <button className="btn btn-primary w-100">Submit</button>
+            <button
+              type="submit"
+              className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-200"
+            >
+              Submit
+            </button>
           </form>
-          {submitted && <p className="text-success mt-2">✅ Support request submitted!</p>}
+          {submitted && (
+            <p className="text-green-600 mt-4 font-medium">
+              ✅ Support request submitted!
+            </p>
+          )}
         </div>
 
         {/* FAQ & Support Info */}
-        <div className="col-md-6 mt-4 mt-md-0">
-          <h4>❓ Frequently Asked Questions</h4>
-          <ul className="faq-list">
-            <li><strong>How do I cancel a booking?</strong><br />Go to "My Bookings" and click "Cancel".</li>
-            <li><strong>Can I change travel date?</strong><br />Not yet, but cancellation and re-booking is supported.</li>
-            <li><strong>What if I didn’t receive a ticket?</strong><br />Check your email spam or contact support below.</li>
+        <div>
+          <h4 className="text-xl font-semibold mb-4">❓ Frequently Asked Questions</h4>
+          <ul className="space-y-4 mb-8">
+            {SUPPORT_FAQS.map((faq, idx) => (
+              <li
+                key={idx}
+                className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500"
+              >
+                <p className="font-semibold">{faq.question}</p>
+                <p className="mt-1 text-gray-700">{faq.answer}</p>
+              </li>
+            ))}
           </ul>
 
-          <div className="mt-4">
-            <h5>📞 Contact Info</h5>
-            <p><strong>Email:</strong> support@bussure.com</p>
-            <p><strong>Phone:</strong> +91 98765 43210</p>
-            <p><strong>Hours:</strong> 9:00 AM – 6:00 PM (Mon–Sat)</p>
+          <div>
+            <h5 className="text-lg font-semibold mb-2">📞 Contact Info</h5>
+            <p className="text-gray-700 mb-1">
+              <span className="font-semibold">Email:</span> support@bussure.com
+            </p>
+            <p className="text-gray-700 mb-1">
+              <span className="font-semibold">Phone:</span> +91 98765 43210
+            </p>
+            <p className="text-gray-700">
+              <span className="font-semibold">Hours:</span> 9:00 AM – 6:00 PM (Mon–Sat)
+            </p>
           </div>
         </div>
       </div>

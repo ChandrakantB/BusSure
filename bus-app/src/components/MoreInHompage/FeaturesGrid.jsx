@@ -1,17 +1,18 @@
 // src/components/FeaturesGrid.jsx
-import React from 'react';
-import './FeaturesGrid.css';
+import React from "react";
 
 const features = [
   {
     icon: "🧭",
     title: "Local Village Connectivity",
-    description: "We cover not only cities but remote villages, ensuring access to transportation for all.",
+    description:
+      "We cover not only cities but remote villages, ensuring access to transportation for all.",
   },
   {
     icon: "🔐",
     title: "Verified Bus Partners",
-    description: "Only verified bus owners are allowed, ensuring your safety and reliability.",
+    description:
+      "Only verified bus owners are allowed, ensuring your safety and reliability.",
   },
   {
     icon: "💺",
@@ -21,33 +22,39 @@ const features = [
   {
     icon: "📲",
     title: "Easy Booking & Cancellation",
-    description: "Book in seconds, cancel with one tap. Your travel, your control.",
+    description:
+      "Book in seconds, cancel with one tap. Your travel, your control.",
   },
   {
     icon: "📡",
     title: "Real-Time Availability",
-    description: "Get updated data on available buses, timings, and fares instantly.",
+    description:
+      "Get updated data on available buses, timings, and fares instantly.",
   },
   {
     icon: "🌐",
     title: "Multilingual Support",
-    description: "Enjoy the experience in your native language. We're truly Bharat-first!",
+    description:
+      "Enjoy the experience in your native language. We're truly Bharat-first!",
   },
 ];
 
 const FeaturesGrid = () => {
   return (
-    <section className="features-section py-5">
-      <div className="container">
-        <h2 className="text-center fw-bold text-primary mb-4">✨ Why Choose BusSure?</h2>
-        <div className="row">
+    <section className="bg-[#fdfdfd] py-12">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-center font-bold text-primary mb-10 text-2xl md:text-3xl">
+          ✨ Why Choose BusSure?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="col-sm-6 col-lg-4 mb-4">
-              <div className="feature-card p-4 shadow-sm text-center h-100">
-                <div className="fs-1 mb-3">{feature.icon}</div>
-                <h5 className="fw-semibold">{feature.title}</h5>
-                <p className="text-muted">{feature.description}</p>
-              </div>
+            <div
+              key={index}
+              className="rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition transform duration-200 p-6 text-center"
+            >
+              <div className="text-5xl mb-4">{feature.icon}</div>
+              <h5 className="font-semibold text-lg">{feature.title}</h5>
+              <p className="text-gray-500 mt-2">{feature.description}</p>
             </div>
           ))}
         </div>
