@@ -15,6 +15,7 @@ import DashboardLayout from './admin/DashboardLayout';
 import PendingApprovals from './admin/pages/PendingApprovals';
 import AllBuses from './admin/pages/AllBuses';
 import Reports from './admin/pages/Reports';
+import BusesPage from './components/BusesPage';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
@@ -35,7 +36,9 @@ function App() {
           <Route path="/partner" element={<Partner />} />
           <Route path="/partner/dashboard" element={<BusOwnerDashboard />} />
           {/* <Route path="/select-seats/:busId" element={<SeatSelection />} /> */}
-          <Route path="/select-seats/summary" element={<BookingSummary />} />
+          {/* <Route path="/select-seats/summary" element={<BookingSummary />} /> */}
+  <Route path="/buses" element={<BusesPage />} />
+  <Route path="/booking-summary" element={<BookingSummary />} />
           <Route path="/api/admin/login" element={<AdminLogin />} />
 
           {/* 🛠️ Admin Panel Routes (Nested Correctly) */}

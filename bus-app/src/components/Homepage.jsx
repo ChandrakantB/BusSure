@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
 // import HomePageDetails from "./HomePageDetails";
-import Hoffersection from "./Hoffersection";
+// import Hoffersection from "./Hoffersection";
 import PopularRoutes from "./MoreInHompage/PopularRoutes";
 // import HstateBook from "./HstateBook";
 import FeaturesGrid from "./MoreInHompage/FeaturesGrid";
@@ -39,7 +39,7 @@ const Homepage = () => {
         <New/>
       </div>
 
-      <Hoffersection />
+      {/* <Hoffersection /> */}
 
       <PopularRoutes />
       {/* <HstateBook /> */}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, MapPin, Navigation, ArrowRight, Loader2 } from "lucide-react";
 
 export default function VillageFinder() {
@@ -11,6 +12,7 @@ export default function VillageFinder() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [activeField, setActiveField] = useState(null);
+  const navigate = useNavigate();
 
   const fetchResults = async (query, type) => {
     try {
@@ -55,6 +57,12 @@ export default function VillageFinder() {
     } else {
       setToQuery(value);
       setToVillage(null);
+    }
+  };
+
+  const handleFindBuses = () => {
+    if (fromVillage && toVillage) {
+      navigate("/buses", { state: { from: fromVillage, to: toVillage } });
     }
   };
 
@@ -275,7 +283,6 @@ export default function VillageFinder() {
                   </div>
                 </div>
 
-
                 {/* To Village */}
                 <div className="text-center">
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
@@ -289,6 +296,16 @@ export default function VillageFinder() {
                     </p>
                   </div>
                 </div>
+              </div>
+
+              {/* 🚍 Find Buses Button */}
+              <div className="mt-8 text-center">
+                <button
+                  onClick={handleFindBuses}
+                  className="px-6 py-3 bg-white text-indigo-700 font-semibold rounded-xl shadow-lg hover:bg-indigo-100 transition"
+                >
+                  🚍 Find Buses
+                </button>
               </div>
             </div>
           )}
